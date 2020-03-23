@@ -1,0 +1,119 @@
+:root{
+    --main-background: #9b59b6;
+    --header-background: #f7f7f7; 
+    --btn-background: #8e44ad;
+    --success-border: #2ecc71;
+    --error-border: #e74c3c;
+}
+
+*{
+    margin: 0px; 
+    padding: 0px; 
+    box-sizing: border-box;
+    
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--main-background);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container{
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    width: 400px; 
+    overflow: hidden; /* need this so hide the overflow corners of the header */
+}
+
+.header{
+    background-color: var(--header-background);
+    border-bottom: 1px solid #f0f0f0; 
+    padding: 20px 40px; 
+}
+
+.header h2{
+    margin: 0; 
+}
+
+.form{
+    padding: 30px 40px; 
+}
+
+.form-control{
+    margin-bottom: 10px; /* reserving this space for the error message */
+    padding-bottom: 20px; /* reserving this space for the error message */
+    position: relative; 
+}
+
+.form-control label{
+    display: inline-block;
+    margin-bottom: 5px; 
+}
+
+.form-control input{
+    border: 2px solid #f0f0f0; 
+    border-radius: 4px; 
+    display: block; 
+    width: 100%; 
+    padding: 10px; 
+    font-size: 14px;
+    font-family: inherit;
+}
+
+/* styling for success/error entry */
+.form-control.success input{
+    border-color: var(--success-border);
+}
+
+.form-control.success i.fa-check-circle{
+    visibility: visible;
+    color: var(--success-border);
+}
+
+
+.form-control.error input{
+    border-color: var(--error-border);
+}
+
+.form-control.error i.fa-exclamation-circle{
+    visibility: visible;
+    color: var(--error-border);
+}
+
+.form-control.error small{
+    visibility: visible;
+    color: var(--error-border);
+}
+
+/* position icons & hide them by default. JS will show them on error */
+.form-control i{
+    position: absolute;
+    top: 35px; 
+    right: 10px; 
+    visibility: hidden; /* hidden by default - will show on error w/javascript */
+}
+
+.form-control small{
+    position: absolute; 
+    bottom: 0; 
+    left: 0; 
+    visibility: hidden; /* hidden by default - will show on error w/javascript */
+}
+
+/* style the button */
+.form button{
+    background-color: var(--btn-background);
+    border: 2px solid var(--btn-background);
+    border-radius: 4px; 
+    color: #fff; 
+    display: block; 
+    font-family: inherit;
+    font-size: 16px;
+    width: 100%; 
+    padding: 10px; 
+}
